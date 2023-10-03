@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Work_Out</string>
+    <string name="welcome_text">"Seu corpo, sua jornada! Venha conosco e conquiste a melhor versão de você mesmo."</string>
+    <string name="get_ready">Get ready for</string>
+</resources>
