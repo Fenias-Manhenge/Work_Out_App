@@ -2,10 +2,10 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/exerciseScreen"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ExerciseScreen"
-    android:id="@+id/exerciseScreen">
+    tools:context=".ExerciseScreen">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/bar_layout"
@@ -20,8 +20,7 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="?attr/colorSurfaceContainerHigh"
-            app:title="Exercise"
-            />
+            app:title="Exercise" />
 
     </com.google.android.material.appbar.AppBarLayout>
 
@@ -29,6 +28,7 @@
         android:id="@+id/tv_explain_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
         android:text="@string/get_ready"
         android:textAllCaps="true"
         android:textColor="?attr/colorOnSurface"
@@ -36,19 +36,17 @@
         app:fontFamily="@font/roboto_black"
         app:layout_constraintBottom_toTopOf="@+id/frameLayout"
         app:layout_constraintEnd_toEndOf="@+id/frameLayout"
-        app:layout_constraintStart_toStartOf="@+id/frameLayout"
-        />
+        app:layout_constraintStart_toStartOf="@+id/frameLayout" />
 
     <FrameLayout
         android:id="@+id/frameLayout"
         android:layout_width="150dp"
         android:layout_height="150dp"
+        android:layout_marginBottom="280dp"
         android:background="@drawable/timer_main_circle"
-        android:layout_marginBottom="250dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        >
+        app:layout_constraintStart_toStartOf="parent">
 
         <com.google.android.material.progressindicator.CircularProgressIndicator
             android:id="@+id/pbSeconds"
@@ -61,8 +59,7 @@
             app:indicatorColor="?attr/colorPrimary"
             app:indicatorDirectionCircular="counterclockwise"
             app:indicatorSize="110dp"
-            app:trackColor="?attr/colorPrimaryContainer"
-            />
+            app:trackColor="?attr/colorPrimaryContainer" />
 
         <LinearLayout
             android:layout_width="70dp"
@@ -79,9 +76,35 @@
                 android:text="10"
                 android:textColor="?attr/colorOnPrimaryContainer"
                 android:textSize="30sp"
-                app:fontFamily="@font/roboto_medium"
-                />
+                app:fontFamily="@font/roboto_medium" />
         </LinearLayout>
     </FrameLayout>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvUpComingExercise"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/roboto_medium"
+        android:text="@string/upcoming_exercise"
+        android:textSize="@dimen/text_size"
+        app:layout_constraintEnd_toEndOf="@+id/tv_explain_text"
+        app:layout_constraintStart_toStartOf="@+id/tv_explain_text"
+        app:layout_constraintTop_toBottomOf="@+id/frameLayout" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvExerciseName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        tools:text="Exercise name"
+        android:fontFamily="@font/roboto_bold"
+        android:textColor="?attr/colorOnSurface"
+        android:textSize="@dimen/text_size"
+        app:layout_constraintEnd_toEndOf="@+id/tvUpComingExercise"
+        app:layout_constraintHorizontal_bias="0.555"
+        app:layout_constraintStart_toStartOf="@+id/tvUpComingExercise"
+        app:layout_constraintTop_toBottomOf="@+id/tvUpComingExercise"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
