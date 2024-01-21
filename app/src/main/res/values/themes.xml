@@ -1,6 +1,7 @@
 
 <resources>
     <style name="AppTheme" parent="Theme.Material3.Light.NoActionBar">
+        <item name="android:fontFamily">@font/roboto_regular</item>
         <item name="toolbarStyle">@style/ToolbarStyle</item>
         <item name="android:windowLightStatusBar">true</item>
         <item name="android:statusBarColor">?attr/colorSurface</item>

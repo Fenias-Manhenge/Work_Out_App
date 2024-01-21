@@ -1,6 +1,5 @@
 package com.example.work_out
 
-import android.app.Dialog
 import android.content.Intent
 import android.graphics.Outline
 import android.graphics.Rect
@@ -48,6 +47,7 @@ class ExerciseScreen : AppCompatActivity(), TextToSpeech.OnInitListener {
     private var position = 0
     var myConstraintLayout: ConstraintLayout? = null
     val set = ConstraintSet()
+    private var timer: CountDownTimer? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -66,9 +66,6 @@ class ExerciseScreen : AppCompatActivity(), TextToSpeech.OnInitListener {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         binding.toolBar.setNavigationOnClickListener {
-            onBackPressed()
-            timerPrepare.cancel()
-
             backDialog()
         }
 
@@ -181,7 +178,7 @@ class ExerciseScreen : AppCompatActivity(), TextToSpeech.OnInitListener {
 
     // Second timer
     private fun timer() {
-        object : CountDownTimer(10000, 1000) {
+        timer = object : CountDownTimer(10000, 1000) {
             override fun onTick(remaining: Long) {
                 val seconds = (remaining / 1000)
                 binding.tvSeconds.text = seconds.toString()
@@ -210,12 +207,13 @@ class ExerciseScreen : AppCompatActivity(), TextToSpeech.OnInitListener {
                     applyTo(myConstraintLayout)
                 }
 
-                if(position >= data.size - 7)
+                if(position >= data.size - 3)
                     startActivity(Intent(this@ExerciseScreen, Finish::class.java))
 
                 timerPrepare.start()
             }
-        }.start()
+        }
+        timer?.start()
     }
 
     //
@@ -250,7 +248,10 @@ class ExerciseScreen : AppCompatActivity(), TextToSpeech.OnInitListener {
             .setPositiveButton("Yes"){ dialog, _ ->
                 this.finish()
                 dialog.dismiss()
+                timerPrepare.cancel()
+                timer?.cancel()
             }
+            .show()
     }
 
 }

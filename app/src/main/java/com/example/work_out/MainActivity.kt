@@ -17,5 +17,9 @@ class MainActivity : AppCompatActivity() {
         binding.btnStart.setOnClickListener {
             startActivity(Intent(this, ExerciseScreen::class.java))
         }
+
+        binding.btnBMI.setOnClickListener{
+            startActivity(Intent(this, Bmi::class.java))
+        }
     }
 }

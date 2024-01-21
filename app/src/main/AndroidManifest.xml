@@ -14,6 +14,15 @@
         android:theme="@style/AppTheme"
         tools:targetApi="33">
         <activity
+            android:name=".Bmi"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".Finish"
             android:exported="false" />
         <activity

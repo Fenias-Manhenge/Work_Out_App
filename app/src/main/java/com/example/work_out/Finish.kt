@@ -2,10 +2,7 @@ package com.example.work_out
 
 import android.content.Intent
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import com.example.work_out.databinding.FinishBinding
 
 class Finish : AppCompatActivity() {
@@ -19,6 +16,7 @@ class Finish : AppCompatActivity() {
 
         binding.btnFinish.setOnClickListener {
             startActivity(Intent(this, MainActivity::class.java))
+            this.finish()
         }
     }
 }
