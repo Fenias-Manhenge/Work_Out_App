@@ -3,4 +3,46 @@
     <string name="welcome_text">"Seu corpo, sua jornada! Venha conosco e conquiste a melhor versão de você mesmo."</string>
     <string name="get_ready">Get ready for</string>
     <string name="upcoming_exercise">Upcoming Exercise</string>
+    <string name="weight">Weight</string>
+    <string name="calculate">Calculate</string>
+    <string name="height">Height</string>
+    <string name="bmiLabelVerySeverelyUnderweight">
+        Very severely underweight
+    </string>
+    <string name="bmiLabelSeverelyUnderweight">
+        severely underweight
+    </string>
+    <string name="bmiLabelUnderweight">
+        underweight
+    </string>
+    <string name="bmiLabelNormal">
+        Normal
+    </string>
+    <string name="bmiLabelOverWeight">
+        OverWeight
+    </string>
+    <string name="bmiLabelModeratelyObese">
+        ModeratelyObese
+    </string>
+    <string name="bmiLabelSeverelyObese">
+        SeverelyObese
+    </string>
+    <string name="bmiLabelVerySeverelyObese">
+        SeverelyObese
+    </string>
+    <string name="bmiDescriptionObese">
+        Oops! You really need to take care of yourself, workout maybe!
+    </string>
+    <string name="bmiDescriptionUnderWeight">
+        Oops! You really need to take better care of yourself, Eat more!
+    </string>
+    <string name="bmiDescriptionNormal">
+        Congratulations, you are in a good shape!
+    </string>
+    <string name="bmiDescriptionSeverelyObese">
+        OMG, you are in a very dangerous condition, act now!
+    </string>
+    <string name="your_bmi">YOUR BMI</string>
+    <string name="metric_units">Metric Units</string>
+    <string name="us_metrics">US Metrics</string>
 </resources>
