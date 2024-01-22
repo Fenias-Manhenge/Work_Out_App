@@ -114,6 +114,7 @@
             android:textSize="@dimen/text_size"
             tools:text="Good form"
             android:layout_marginTop="15dp"
+            android:justificationMode="inter_word"
             />
 
     </LinearLayout>
