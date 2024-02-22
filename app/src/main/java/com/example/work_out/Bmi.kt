@@ -52,7 +52,7 @@ class Bmi : AppCompatActivity() {
             if (isChecked){
                 when(checkedID){
                     binding.btnMetricUnit.id -> adjustViews(R.layout.metric_unit)
-                    binding.btnUsUnit.id -> adjustViews(R.layout.us_metrics)
+                    binding.btnUsUnit.id -> adjustViews(R.layout.us_unit)
                 }
             }
         }
@@ -91,15 +91,33 @@ class Bmi : AppCompatActivity() {
         val etHeight = view.findViewById<EditText>(R.id.et_height)
         val etWeight = view.findViewById<EditText>(R.id.et_weight)
         val btnCalculate = view.findViewById<Button>(R.id.btnCalculate)
+        val etFeet = view.findViewById<EditText>(R.id.et_feet)
+        val etInch = view.findViewById<EditText>(R.id.et_inch)
 
-        btnCalculate.setOnClickListener{
-            if (validateMetricUnit(etHeight, etWeight)) {
-                val height = etHeight.text.toString().toFloat() / 100
-                val weight = etWeight.text.toString().toFloat()
+        if (layoutResID == R.layout.metric_unit) {
+            btnCalculate.setOnClickListener {
+                if (validateMetricUnit(etHeight, etWeight)) {
+                    val height = etHeight.text.toString().toFloat() / 100
+                    val weight = etWeight.text.toString().toFloat()
 
-                val bmi = weight / height.pow(2)
+                    val bmi = weight / height.pow(2)
 
-                displayBmiResult(bmi, tvBmiValue, tvBmiStatus, tvBmiDescription)
+                    displayBmiResult(bmi, tvBmiValue, tvBmiStatus, tvBmiDescription)
+                }
+            }
+        }else if (layoutResID == R.layout.us_unit) {
+            btnCalculate.setOnClickListener {
+                if (validateUsUnit(etWeight, etFeet, etInch)) {
+                    val feet = etFeet.text.toString().toFloat()
+                    val inch = etInch.text.toString().toFloat()
+                    val weight = etWeight.text.toString().toFloat()
+
+                    val height = inch + feet * 12
+
+                    val bmi = weight / height.pow(2) * 703
+
+                    displayBmiResult(bmi, tvBmiValue, tvBmiStatus, tvBmiDescription)
+                }
             }
         }
 
@@ -114,6 +132,19 @@ class Bmi : AppCompatActivity() {
         if(etHeight.text.toString().isEmpty())
             validate = false
         else if(etWeight.text.toString().isEmpty())
+            validate = false
+
+        return validate
+    }
+
+    private fun validateUsUnit(etWeight: EditText, feet: EditText, inch: EditText): Boolean{
+        var validate = true
+
+        if(etWeight.text.toString().isEmpty())
+            validate = false
+        else if(feet.text.toString().isEmpty())
+            validate = false
+        else if(inch.text.toString().isEmpty())
             validate = false
 
         return validate

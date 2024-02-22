@@ -58,7 +58,7 @@
         app:startIconContentDescription="Body weight"
         app:startIconDrawable="@drawable/body_type_overweight"
         app:startIconScaleType="fitXY"
-        app:suffixText="CM">
+        app:suffixText="m">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/et_weight"
@@ -68,6 +68,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <LinearLayout
+        android:id="@+id/llBmiOutputs"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toTopOf="@+id/btnCalculate"
@@ -78,6 +79,7 @@
         android:orientation="vertical"
         android:layout_marginStart="15dp"
         android:layout_marginEnd="15dp"
+        android:layout_marginTop="30dp"
         android:padding="15dp"
         >
 
@@ -114,7 +116,7 @@
             android:textSize="@dimen/text_size"
             tools:text="Good form"
             android:layout_marginTop="15dp"
-            android:justificationMode="inter_word"
+            android:gravity="center"
             />
 
     </LinearLayout>
@@ -125,10 +127,9 @@
         android:layout_height="wrap_content"
         android:text="@string/calculate"
         android:textSize="30sp"
-        android:textStyle="bold"
-        android:layout_marginBottom="50dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="50dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/llBmiOutputs"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         />

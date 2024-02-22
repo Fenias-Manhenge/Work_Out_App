@@ -17,12 +17,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:suffixText="KG">
+        app:suffixText="Pounds">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_weight"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:hint="Weight" />
+            android:hint="@string/weight"
+            />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -41,9 +43,10 @@
         app:suffixText="KG">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_feet"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:hint="Feet"
+            android:hint="@string/feet"
             />
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -62,20 +65,76 @@
         app:suffixText="KG">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_inch"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:hint="Inch" />
+            android:hint="@string/inch" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
-    <Button
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:id="@+id/llBmiOutputs"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Calculate"
-        android:layout_marginTop="50dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnCalculate"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tilFeet"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginTop="30dp"
+        android:padding="15dp"
+        >
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/your_bmi"
+            android:textSize="@dimen/text_size"
+            />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvBmiValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/text_size"
+            tools:text="00"
+            android:textStyle="bold"
+            android:layout_marginTop="15dp"
+            />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvBmiStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/text_size"
+            tools:text="Normal"
+            android:layout_marginTop="15dp"
+            />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvBmiDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/text_size"
+            tools:text="Good form"
+            android:layout_marginTop="15dp"
+            android:gravity="center"
+            />
+
+    </LinearLayout>
+    <Button
+        android:id="@+id/btnCalculate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/calculate"
+        android:layout_marginTop="50dp"
+        android:textSize="@dimen/text_size"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/llBmiOutputs"
         />
 
     <androidx.constraintlayout.widget.Guideline

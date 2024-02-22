@@ -45,4 +45,6 @@
     <string name="your_bmi">YOUR BMI</string>
     <string name="metric_units">Metric Units</string>
     <string name="us_metrics">US Metrics</string>
+    <string name="inch">Inch</string>
+    <string name="feet">Feet</string>
 </resources>
