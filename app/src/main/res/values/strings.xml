@@ -47,4 +47,5 @@
     <string name="us_metrics">US Metrics</string>
     <string name="inch">Inch</string>
     <string name="feet">Feet</string>
+    <string name="exercise_completed">Exercise Completed</string>
 </resources>
